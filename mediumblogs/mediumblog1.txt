@@ -1,0 +1,36 @@
+
+By Frank Liu (@frankzliu)
+
+This article has been updated since it was first published and is now part of a blog series that serves as a coursebook for concepts and guides related to vector databases.
+
+Jump to:
+
+· Vector databases from 1000 feet
+· Vector databases vs. vector search libraries
+· Vector search plugins for traditional databases
+· Technical challenges
+· Wrapping up
+
+Inthe previous tutorial, we took a quick look at the ever-increasing amount of data that is being generated on a daily basis. We then covered how these bits of data can be split into structured/semi-structured and unstructured data, the differences between them, and how modern machine learning can be used to understand unstructured data through embeddings. Finally, we briefly touched upon unstructured data processing via ANN search.
+
+Through all of this information, it’s now clear that the ever-increasing amount of unstructured data requires a paradigm shift and a new category of database management system — the vector database.
+
+A vector database is a fully managed, no-frills solution for storing, indexing, and searching across a massive dataset of unstructured data that leverages the power of embeddings from machine learning models.
+
+Vector databases from 1000 feet
+Guess how many curators it took to label the now-famous ImageNet dataset. Ready for the answer?
+
+25000 people (that’s a lot).
+
+Being able to search across images, video, text, audio, and other forms of unstructured data via their content rather than human-generated labels or tags is exactly what vector databases were meant to solve. When combined with powerful machine learning models, vector databases such as Milvus have the ability to revolutionize e-commerce solutions, recommendation systems, computer security, pharmaceuticals, and many other industries.
+
+As mentioned in the introduction, a vector database is a fully managed, no-frills solution for storing, indexing, and searching across a massive dataset of unstructured data that leverages the power of embeddings from machine learning models.
+
+But let’s think about it from a user perspective. What good is a piece of technology without strong usability and a good user API? In concert with the underlying technology, multi-tenancy and usability are also incredibly important attributes for vector databases. Let’s list out all of the features a mature vector database should have (many of these features overlap with those of databases for structured/semi-structured data):
+
+Scalability and tunability: As the number of unstructured data elements stored in a vector database grows into the hundreds of millions or billions, horizontal scaling across multiple nodes becomes paramount (scaling up by manually inserting sticks of RAM into a server rack every 3 months is no fun). Furthermore, differences in insert rate, query rate, and underlying hardware may result in different application needs, making overall system tunability a mandatory feature for vector databases.
+Multi-tenancy and data isolation: Supporting multiple users is an obvious feature for all database systems. However, going guns blazing and creating a new vector database for every new user will probably turn out poorly for everyone. Parallel to this notion is data isolation — the idea that any inserts, deletes, or queries made to one collection in a database should be invisible to the rest of the system unless the collection owner explicitly wishes to share the information.
+A complete suite of APIs: A database without a full suite of APIs and SDKs is, frankly speaking, not a real database. For example, Milvus maintains Python, Node, Go, and Java SDKs for communicating with and administering a Milvus database.
+An intuitive user interface/administrative console: User interfaces can help significantly reduce the learning curve associated with vector databases. These interfaces also expose new vector database features and tools that would otherwise be inaccessible.
+Phew. That was quite a bit of info, so we’ll summarize it right here: a vector database should have the following features: 1) scalability and tunability, 2) multi-tenancy and data isolation, 3) a complete suite of APIs, and 4) an intuitive user interface/administrative console. In the next two sections, we’ll follow up on this concept by comparing vector databases versus vector search libraries and vector search plugins, respectively.
+
