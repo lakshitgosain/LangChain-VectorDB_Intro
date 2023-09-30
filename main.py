@@ -8,7 +8,7 @@ from langchain import OpenAI
 import pinecone
 from langchain.chains import RetrievalQA
 
-pinecone.init(environment='gcp-starter',api_key='74d485a7-91b9-4261-8acf-c390287907ec')
+pinecone.init(environment='gcp-starter',api_key='')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
